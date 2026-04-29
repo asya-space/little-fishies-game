@@ -1,6 +1,5 @@
 @use '_vars';
 @use '_mixins';
-
 .aqua {
     position: relative;
     @include mixins.mainSize();

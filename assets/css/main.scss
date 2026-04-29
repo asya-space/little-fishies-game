@@ -5,7 +5,6 @@
 @use '_game-over';
 @use '_mixins';
 @use '_vars';
-
 * {
     margin: vars.$null;
     padding: vars.$null;
@@ -22,9 +21,7 @@ body {
     font-family: vars.$main;
     overflow: hidden;
 }
-
 /* floating bubbles */
-
 .bg-bubbles {
     position: fixed;
     @include mixins.pos();
