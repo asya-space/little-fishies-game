@@ -1,9 +1,9 @@
 // audio-object
-const catchSound = new Audio('../assets/audio/catch.mp3'),
-    winSound = new Audio('../assets/audio/winner.mp3');
+const catchSound = new Audio('./assets/audio/catch.mp3'),
+    winSound = new Audio('./assets/audio/winner.mp3');
 
 function playSound(sound) {
-    sound.preload = 'auto';
+    //sound.preload = 'auto';
     sound.currentTime = 0;
     sound.play().catch(() => {});
 }
