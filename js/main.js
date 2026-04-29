@@ -1,41 +1,38 @@
 // config
-const PIC_PATH = '../assets/img/';
-const TOTAL_FISH = 15;
-const FISH_EMOJIS = [
-    { img: `${PIC_PATH}1-fish-icon.svg`},
-    { img: `${PIC_PATH}2-fish-icon.svg`},
-    { img: `${PIC_PATH}3-fish-icon.svg`},
-    { img: `${PIC_PATH}4-fish-icon.svg`},
-    { img: `${PIC_PATH}5-fish-icon.svg`},
-    { img: `${PIC_PATH}6-fish-icon.svg`},
-    { img: `${PIC_PATH}7-fish-icon.svg`},
-    { img: `${PIC_PATH}8-shrimp-icon.svg`},
-    { img: `${PIC_PATH}9-crab-icon.svg`},
-    { img: `${PIC_PATH}10-fish-icon.svg`},
-    { img: `${PIC_PATH}11-fish-icon.svg`}
-];
-const AQUARIUM_WIDTH = 900;
-const AQUARIUM_HEIGHT = 550;
-const FISH_SIZE = 40;
-const BASE_SPEED = 1.5;
-
-        // state
+const PIC_PATH = '../assets/img/',
+    TOTAL_FISH = 15,
+    FISH_EMOJIS = [
+        { img: `${PIC_PATH}1-fish-icon.svg`},
+        { img: `${PIC_PATH}2-fish-icon.svg`},
+        { img: `${PIC_PATH}3-fish-icon.svg`},
+        { img: `${PIC_PATH}4-fish-icon.svg`},
+        { img: `${PIC_PATH}5-fish-icon.svg`},
+        { img: `${PIC_PATH}6-fish-icon.svg`},
+        { img: `${PIC_PATH}7-fish-icon.svg`},
+        { img: `${PIC_PATH}8-shrimp-icon.svg`},
+        { img: `${PIC_PATH}9-crab-icon.svg`},
+        { img: `${PIC_PATH}10-fish-icon.svg`},
+        { img: `${PIC_PATH}11-fish-icon.svg`}
+    ],
+    AQUARIUM_WIDTH = 900,
+    AQUARIUM_HEIGHT = 550,
+    FISH_SIZE = 40,
+    BASE_SPEED = 1.5;
+// state
 let fishArray = [],
-caughtCount = 0,
-gameStartTime = null,
-timerInterval = null,
-animationFrameId = null,
-gameActive = false;
-
+    caughtCount = 0,
+    gameStartTime = null,
+    timerInterval = null,
+    animationFrameId = null,
+    gameActive = false;
 // DOM elements
-const aqua = document.querySelector('.aqua');
-const caughtEl = document.querySelector('.caught');
-const remainingEl = document.querySelector('.remaining');
-const timerEl = document.querySelector('.timer');
-const victoryScreen = document.querySelector('.victory');
-const finalScoreEl = document.querySelector('.final-score');
-const finalTimeEl = document.querySelector('.final-time');
-
+const aqua = document.querySelector('.aqua'),
+    caughtEl = document.querySelector('.caught'),
+    remainingEl = document.querySelector('.remaining'),
+    timerEl = document.querySelector('.timer'),
+    victoryScreen = document.querySelector('.victory'),
+    finalScoreEl = document.querySelector('.final-score'),
+    finalTimeEl = document.querySelector('.final-time');
 // bg bubbles
 function createBgBubbles() {
     const container = document.querySelector('.bg-bubbles');
@@ -52,7 +49,6 @@ function createBgBubbles() {
         container.appendChild(bubble);
     }
 }
-
 // seaweed
 function createSeaweed() {
     const positions = [50, 150, 750, 830, 250, 680];
