@@ -1,15 +1,15 @@
 // audio-object
-const catchSound = new Audio('./assets/audio/catch.mp3'),
-    winSound = new Audio('./assets/audio/winner.mp3');
+const catchSound = new Audio('/../assets/audio/catch.mp3'),
+    winSound = new Audio('/../assets/audio/winner.mp3');
 
 function playSound(sound) {
-    //sound.preload = 'auto';
+    sound.preload = 'auto';
     sound.currentTime = 0;
     sound.play().catch(() => {});
 }
 
 // config
-const PIC_PATH = '../assets/img/',
+const PIC_PATH = '/../assets/img/',
     TOTAL_FISH = 15,
     FISH_EMOJIS = [
         { img: `${PIC_PATH}1-fish-icon.svg`},
