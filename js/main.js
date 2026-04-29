@@ -1,3 +1,8 @@
+// audio-object
+const catchSound = new Audio('../assets/audio/catch.mp3'),
+    winSound = new Audio('../assets/audio/winner.mp3');
+
+
 // config
 const PIC_PATH = '../assets/img/',
     TOTAL_FISH = 15,
@@ -162,6 +167,8 @@ class Fish {
 
     catchFish() {
         if (this.caught || !this.alive) return;
+        catchSound.currentTime = 0;
+        catchSound.play();
         this.caught = true;
         this.alive = false;
         this.element.classList.add('caught');
@@ -236,6 +243,8 @@ function getElapsedTime() {
 // victory
 function showVictory() {
     gameActive = false;
+    winSound.currentTime = 0;
+    winSound.play();
     clearInterval(timerInterval);
     cancelAnimationFrame(animationFrameId);
 
