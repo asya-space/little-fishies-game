@@ -1,10 +1,10 @@
 // audio-object
-const catchSound = new Audio('../assets/audio/catch.mp3'),
-    winSound = new Audio('../assets/audio/winner.mp3');
+const catchSound = new Audio('./assets/audio/catch.mp3'),
+    winSound = new Audio('./assets/audio/winner.mp3');
 
 
 // config
-const PIC_PATH = '../assets/img/',
+const PIC_PATH = './assets/img/',
     TOTAL_FISH = 15,
     FISH_EMOJIS = [
         { img: `${PIC_PATH}1-fish-icon.svg`},
