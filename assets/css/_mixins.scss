@@ -1,0 +1,35 @@
+@use '_vars';
+
+@mixin pos {
+    top: vars.$null;
+    left: vars.$null;
+    right: vars.$null;
+    bottom: vars.$null;
+}
+
+@mixin topLeftRight {
+    top: vars.$null;
+    left: vars.$null;
+    right: vars.$null;
+}
+
+@mixin rightBottomLeft {
+    bottom: vars.$null;
+    left: vars.$null;
+    right: vars.$null;
+}
+
+@mixin content {
+    position: absolute;
+    content: '';
+}
+
+@mixin pointer {
+    pointer-events: none;
+    z-index: 100;
+}
+
+@mixin mainSize {
+    width: vars.$mainWidth;
+    height: vars.$mainHeight;
+}

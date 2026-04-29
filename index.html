@@ -7,55 +7,58 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="accets/css/main.css">
+        <link rel="stylesheet" href="assets/css/main.css">
     </head>
     <body>
         <main>
-            <div class="bg-bubbles" id="bg-bubbles"></div>
+            <div class="bg-bubbles"></div>
 
-            <div id="game-container">
-                <div id="score-panel">
+            <div class="game-container">
+                <div class="score">
                     <div>
-                        <div class="label">Caught</div>
-                        <div class="value caught" id="caught-count">0</div>
+                        <div class="score__label">Caught</div>
+                        <div class="score__value caught">0</div>
                     </div>
-                    <div class="divider"></div>
+                    <div class="score__divider"></div>
                     <div>
-                        <div class="label">Fish left</div>
-                        <div class="value remaining" id="remaining-count">0</div>
+                        <div class="score__label">Fish left</div>
+                        <div class="score__value remaining">0</div>
                     </div>
-                    <div class="divider"></div>
+                    <div class="score__divider"></div>
                     <div>
-                        <div class="label">Time</div>
-                        <div class="value" id="timer">0:00</div>
+                        <div class="score__label">Time</div>
+                        <div class="score__value timer">0:00</div>
                     </div>
                 </div>
 
-                <div id="aquarium">
-                    <div class="light-rays"></div>
-                    <div class="caustics"></div>
-                    <div class="sand"></div>
+                <div class="aqua">
+                    <div class="aqua__light-rays"></div>
+                    <div class="aqua__soda"></div>
+                    <div class="aqua__sand"></div>
                 </div>
             </div>
 
-            <div id="victory-screen">
-                <div id="victory-card">
-                    <div class="trophy">🏆</div>
-                    <h2>Congratulations</h2>
-                    <p>You caught all the fish<br>Excellent fishing!</p>
+            <div class="victory">
+                <div class="victory__card">
+                    <div class="victory__trophy">
+                        <img src="assets/img/trophy-img.svg" alt="trophy">
+                    </div>
+                    <h2 class="victory__title">Congratulations</h2>
+                    <p class="victory__desc">You caught all the fish<br>Excellent fishing!</p>
                     <div class="stats">
-                        <div class="stat">
-                            <div class="num" id="final-score">0</div>
-                            <div class="lbl">Fish</div>
+                        <div class="stats__table">
+                            <div class="stats__num final-score">0</div>
+                            <div class="stats__title">Fish</div>
                         </div>
-                        <div class="stat">
-                            <div class="num" id="final-time">0:00</div>
-                            <div class="lbl">Time</div>
+                        <div class="stats__time">
+                            <div class="stats__num final-time">0:00</div>
+                            <div class="stats__title">Time</div>
                         </div>
                     </div>
-                    <button id="restart-btn">🔄 Play again</button>
+                    <button class="restart-btn">&#8634; Play again</button>
                 </div>
             </div>
         </main>
+        <script src="js/main.js"></script>
     </body>
 </html>

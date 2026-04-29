@@ -1,0 +1,80 @@
+@use '_mixins';
+@use '_vars';
+
+.victory {
+    position: fixed;
+    @include mixins.pos();
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: vars.$no;
+    justify-content: vars.$ctr;
+    align-items: vars.$ctr;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease;
+
+    @keyframes fadeIn {
+        from { 
+            opacity: 0; 
+        }
+        to { 
+            opacity: 1; 
+        }
+    }
+    
+    &__card {
+        background: linear-gradient(135deg, rgba(30, 60, 120, 0.9), rgba(15, 30, 60, 0.95));
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 30px;
+        padding: 50px 70px;
+        text-align: vars.$ctr;
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+        animation: cardAppear 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes cardAppear {
+        from { 
+            transform: scale(0.5) translateY(50px); 
+            opacity: 0; 
+        }
+        to { 
+            transform: scale(1) translateY(0); 
+            opacity: 1; 
+        }
+    }
+
+    &__trophy {
+        font-size: 80px;
+        margin-bottom: 20px;
+        animation: jumping 1s ease-in-out infinite;
+    }
+
+    @keyframes jumping {
+        0%, 100% { 
+            transform: translateY(0); 
+        }
+        50% { 
+            transform: translateY(-10px); 
+        }
+    }
+
+    &__title {
+        color: vars.$white;
+        font-size: 36px;
+        margin-bottom: 10px;
+        background: linear-gradient(90deg, #fbbf24, #f59e0b, #fbbf24);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    &__desc {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 18px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+}
+
+.victory.show {
+    display: vars.$flx;
+}

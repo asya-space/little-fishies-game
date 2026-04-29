@@ -1,0 +1,76 @@
+@use '_vars';
+@use '_mixins';
+
+.game-container {
+    position: relative;
+    z-index: 1;
+    display: vars.$flx;
+    flex-direction: column;
+    align-items: vars.$ctr;
+    backdrop-filter: drop-shadow(4px 4px 10px #000);
+    gap: 20px;
+
+    .score {
+        display: vars.$flx;
+        align-items: vars.$ctr;
+        gap: 30px;
+        padding: 15px 40px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border-radius: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+        &__label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        &__value {
+            color: vars.$white;
+            font-size: 32px;
+            font-weight: 700;
+            min-width: 50px;
+            text-align: vars.$ctr;
+        }
+
+        &__value.caught {
+            color: vars.$green;
+        }
+
+        &__value.remaining {
+            color: vars.$orange;
+        }
+
+        &__divider {
+            width: 1px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+
+.score-popup {
+    position: vars.$abs;
+    color: vars.$green;
+    font-size: vars.$twenty;
+    font-weight: 700;
+    pointer-events: vars.$no;
+    z-index: 90;
+    animation: popUp 0.8s ease-out forwards;
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+@keyframes popUp {
+    0% { 
+        transform: translateY(0) scale(0.5); 
+        opacity: 1; 
+    }
+    100% { 
+        transform: translateY(-60px) scale(1.2); 
+        opacity: vars.$null; 
+    }     
+}
