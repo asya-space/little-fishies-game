@@ -1,6 +1,6 @@
 // audio-object
-const catchSound = new Audio('../assets/audio/catch.mp3'),
-    winSound = new Audio('../assets/audio/winner.mp3');
+const catchSound = new Audio('./assets/audio/catch.mp3'),
+    winSound = new Audio('./assets/audio/winner.mp3');
 
 
 // config
