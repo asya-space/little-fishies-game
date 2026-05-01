@@ -1,4 +1,5 @@
 /* offsets */
+
 $null: 0px;
 $twenty: 20px;
 $flx: flex;
@@ -15,3 +16,13 @@ $mainHeight: 500px;
 $green: #4ade80;
 $orange: #f87171;
 $white: #ffffff;
+
+$breakpoints: (
+  sm: 480px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1440px
+);
+
+$func: clamp(40px, 10vw, 80px); 

@@ -2,9 +2,14 @@
 @use '_mixins';
 .stats {
     display: vars.$flx;
-    gap: 40px;
+    gap: 20px;
     justify-content: vars.$ctr;
     margin-bottom: 30px;
+
+    @include mixins.respond(md) {
+        flex-direction: row;
+        gap: 40px;
+    }
 
     &__table,
     &__time {
@@ -13,21 +18,23 @@
 
     &__num {
         color: vars.$green;
-        font-size: 36px;
+        font-size: clamp(vars.$twenty, 5vw, 36px);
         font-weight: 700;
     }
 
     &__title {
         color: rgba(255, 255, 255, 0.5);
-        font-size: 14px;
+        font-size: clamp(10px, 2vw, 14px);
         text-transform: uppercase;
         letter-spacing: 1px;
     }
 }
 
 .restart-btn {
-    padding: 15px 45px;
-    font-size: 18px;
+    width: 100%;
+    max-width: 250px;
+    padding: 12px;
+    font-size: clamp(14px, 3vw, 18px);
     font-weight: 600;
     color: vars.$white;
     background: linear-gradient(135deg, #3b82f6, #2563eb);
@@ -36,6 +43,10 @@
     cursor: pointer;
     transition: all 0.3s;
     box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+
+    @include mixins.respond(md) {
+        padding: 15px 45px;
+    }
 
     &:active {
         transform: translateY(0);

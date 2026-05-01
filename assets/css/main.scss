@@ -19,8 +19,25 @@ body {
     min-height: 100vh;
     background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 40%, #0d2137 100%);
     font-family: vars.$main;
-    overflow: hidden;
+    overflow-x: hidden;
 }
+
+/* responsive */
+.aqua {
+    width: min(95vw, 900px);
+    aspect-ratio: 16 / 9;
+
+    @include mixins.respond(lg) {
+        width: 900px;
+        aspect-ratio: auto;
+    }
+
+    @include mixins.respond(md) {
+        width: 700px;
+        height: 400px;
+    }
+}
+
 /* floating bubbles */
 .bg-bubbles {
     position: fixed;
@@ -99,7 +116,7 @@ body {
     display: vars.$flx;
     align-items: vars.$ctr;
     justify-content: vars.$ctr;
-    font-size: 36px;
+    font-size: clamp(20px, 6vw, 36px);
     line-height: 1;
     pointer-events: vars.$no;
 }
@@ -140,8 +157,8 @@ body {
         opacity: 1; 
     }
     100% { 
-        width: 80px; 
-        height: 80px; 
+        width: vars.$func;
+        height: vars.$func; 
         opacity: vars.$null; 
     }
 }

@@ -6,23 +6,25 @@
     display: vars.$flx;
     flex-direction: column;
     align-items: vars.$ctr;
-    backdrop-filter: drop-shadow(4px 4px 10px #000);
-    gap: 20px;
+    gap: 16px;
+    padding: 10px;
 
     .score {
         display: vars.$flx;
+        justify-content: vars.$ctr;
+        width: min(95vw, 440px);
         align-items: vars.$ctr;
-        gap: 30px;
-        padding: 15px 40px;
+        gap: 20px;
+        padding: 10px 20px;
         background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(10px);
-        border-radius: 50px;
+        border-radius: 40px;
         border: 1px solid rgba(255, 255, 255, 0.15);
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 
         &__label {
             color: rgba(255, 255, 255, 0.6);
-            font-size: 16px;
+            font-size: clamp(12px, 2vw, 16px);
+            letter-spacing: 1px;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -30,24 +32,28 @@
 
         &__value {
             color: vars.$white;
-            font-size: 32px;
+            font-size: clamp(20px, 5vw, 32px);
+            min-width: 40px;
             font-weight: 700;
-            min-width: 50px;
             text-align: vars.$ctr;
-        }
 
-        &__value.caught {
-            color: vars.$green;
-        }
+            &.caught {
+                color: vars.$green;
+            }
 
-        &__value.remaining {
-            color: vars.$orange;
+            &.remaining {
+                color: vars.$orange;
+            }
         }
 
         &__divider {
-            width: 1px;
-            height: 30px;
-            background: rgba(255, 255, 255, 0.2);
+            display: vars.$no;
+            
+            @include mixins.respond(md) {
+                width: 1px;
+                height: 30px;
+                background: rgba(255, 255, 255, 0.2);
+            }
         }
     }
 }

@@ -2,8 +2,7 @@
 @use '_mixins';
 .aqua {
     position: relative;
-    @include mixins.mainSize();
-    border-radius: vars.$twenty;
+    border-radius: 16px;
     overflow: vars.$hide;
     cursor: crosshair;      
     background: linear-gradient(180deg,
@@ -14,6 +13,8 @@
     box-shadow: 0 0 60px rgba(50, 120, 200, 0.15),
                 inset 0 0 60px rgba(50, 120, 200, 0.05),
                 0 20px 60px rgba(0, 0, 0, 0.5);
+    overflow: vars.$hide;
+    transform-origin: top vars.$ctr;
 
     &:before {
         @include mixins.content();
@@ -25,7 +26,7 @@
         background-image: url('../img/ocean-bg.png');
         background-repeat: no-repeat;
         @include mixins.pointer();
-        border-radius: vars.$twenty;
+        border-radius: 16px;
         opacity: 0.7;
         z-index: -1000;
     }

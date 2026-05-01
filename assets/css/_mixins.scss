@@ -1,4 +1,10 @@
 @use '_vars';
+@mixin respond($breakpoint) {
+  @media (min-width: map-get(vars.$breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
 @mixin pos {
     top: vars.$null;
     left: vars.$null;
