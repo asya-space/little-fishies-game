@@ -71,6 +71,7 @@
         font-size: clamp(vars.$twenty, 5 vw, 36px);
         margin-bottom: 10px;
         background: linear-gradient(90deg, #fbbf24, #f59e0b, #fbbf24);
+        background-repeat: vars.$norep;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;

@@ -9,6 +9,7 @@
                 rgba(100, 180, 255, 0.05) 0%,
                 rgba(30, 100, 180, 0.1) 50%,
                 rgba(10, 50, 100, 0.15) 100%);
+    background-repeat: vars.$norep;
     border: 2px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 0 60px rgba(50, 120, 200, 0.15),
                 inset 0 0 60px rgba(50, 120, 200, 0.05),
@@ -24,7 +25,7 @@
             rgba(255, 255, 255, 0.06) 0%,
             transparent 100%);
         background-image: url('../img/ocean-bg.png');
-        background-repeat: no-repeat;
+        background-repeat: vars.$norep;
         @include mixins.pointer();
         border-radius: 16px;
         opacity: 0.7;
@@ -38,6 +39,7 @@
         width: 30%;
         height: 20%;
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+        background-repeat: vars.$norep;
         @include mixins.pointer();
         border-radius: 50%;
         transform: rotate(-15deg);
@@ -82,6 +84,7 @@
         @include mixins.rightBottomLeft();
         height: 50px;
         background: linear-gradient(180deg, transparent 0%, rgba(194, 154, 96, 0.2) 40%,rgba(194, 154, 96, 0.35) 100%);
+        background-repeat: vars.$norep;
         pointer-events: vars.$no;
         z-index: 5;
     }
