@@ -24,7 +24,7 @@
         background: linear-gradient(180deg,
             rgba(255, 255, 255, 0.06) 0%,
             transparent 100%);
-        background-image: url('../img/ocean-bg.png');
+        background-image: url('/ocean-bg.png');
         background-repeat: vars.$norep;
         @include mixins.pointer();
         border-radius: 16px;

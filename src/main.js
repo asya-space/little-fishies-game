@@ -1,6 +1,21 @@
+import './styles/main.scss'
+import fish1 from './assets/fishies/fish1.svg'
+import fish2 from './assets/fishies/fish2.svg'
+import fish3 from './assets/fishies/fish3.svg'
+import fish4 from './assets/fishies/fish4.svg'
+import fish5 from './assets/fishies/fish5.svg'
+import fish6 from './assets/fishies/fish6.svg'
+import fish7 from './assets/fishies/fish7.svg'
+import fish8 from './assets/fishies/fish8.svg'
+import fish9 from './assets/fishies/crab9.svg'
+import fish10 from './assets/fishies/fish10.svg'
+import fish11 from './assets/fishies/fish11.svg'
+import catchFish from './assets/audio/catch.mp3'
+import winner from './assets/audio/winner.mp3'
+
 // audio-object
-const catchSound = new Audio('assets/audio/catch.mp3'),
-    winSound = new Audio('assets/audio/winner.mp3');
+const catchSound = new Audio(catchFish),
+    winSound = new Audio(winner);
 
 function playSound(sound) {
     sound.preload = 'auto';
@@ -11,18 +26,18 @@ function playSound(sound) {
 // config
 const PIC_PATH = 'assets/img/',
     TOTAL_FISH = 15,
-    FISH_EMOJIS = [
-        { img: `${PIC_PATH}1-fish-icon.svg`},
-        { img: `${PIC_PATH}2-fish-icon.svg`},
-        { img: `${PIC_PATH}3-fish-icon.svg`},
-        { img: `${PIC_PATH}4-fish-icon.svg`},
-        { img: `${PIC_PATH}5-fish-icon.svg`},
-        { img: `${PIC_PATH}6-fish-icon.svg`},
-        { img: `${PIC_PATH}7-fish-icon.svg`},
-        { img: `${PIC_PATH}8-shrimp-icon.svg`},
-        { img: `${PIC_PATH}9-crab-icon.svg`},
-        { img: `${PIC_PATH}10-fish-icon.svg`},
-        { img: `${PIC_PATH}11-fish-icon.svg`}
+    fishes = [
+        { name: 'yellow', img: fish1 },
+        { name: 'blue', img: fish2 },
+        { name: 'orange', img: fish3 },
+        { name: 'gradient', img: fish4 },
+        { name: 'lgbt', img: fish5 },
+        { name: 'cyan', img: fish6 },
+        { name: 'lavender', img: fish7 },
+        { name: 'shrimp', img: fish8 },
+        { name: 'crab', img: fish9 },
+        { name: 'red', img: fish10 },
+        { name: 'skeleton', img: fish11 }
     ],
     AQUARIUM_WIDTH = 900,
     AQUARIUM_HEIGHT = 550,
@@ -99,8 +114,8 @@ class Fish {
         this.wobbleSpeed = Math.random() * 0.03 + 0.01;
         this.wobbleAmount = Math.random() * 0.5 + 0.2;
         this.turnTimer = Math.random() * 200 + 100;
-        const random = Math.floor(Math.random() * FISH_EMOJIS.length);
-        this.emoji = FISH_EMOJIS[random].img;
+        const random = Math.floor(Math.random() * fishes.length);
+        this.emoji = fishes[random].img;
         this.element = null;
         this.createDOM();
     }
@@ -325,3 +340,8 @@ const restart = document.querySelector('.restart-btn');
 restart.onclick = function() {
     restartGame();
 }
+
+
+
+
+
