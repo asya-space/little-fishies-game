@@ -4,10 +4,10 @@ __Vanilla JS game logic, no frameworks__
 An interactive browser mini-game where you catch moving fish in a stylized aquarium.
 Built with a focus on animation, object behavior, and real-time interaction.
 
-![Demo](./assets/preview.gif)
+![Demo](./public/preview.gif)
 ## 🎮 Live Demo
 
-[Click here!](https://asya-space.github.io/little-fishies-game/)
+[Click here!](https://little-fishies-game.vercel.app/)
 
 > #### ✨ Features
 > 
